@@ -48,6 +48,7 @@ http://schema.org/Product
 
 Пример:
 
+```html
   <div id="" class="vcard">
     <div class="org">Самсон-опт</div>
     <a class="email" href="mailto:vrn@samsonopt.ru">vrn@samsonopt.ru</a>
@@ -64,6 +65,6 @@ http://schema.org/Product
             242-58-14
     </div>
    </div>
-
+```
 
 Вайарию
