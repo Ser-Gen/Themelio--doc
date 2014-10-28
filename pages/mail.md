@@ -1,6 +1,8 @@
 ## Всё подряд
 
-[Про движок рендеринга в оутлуке 2010](http://stackoverflow.com/a/12019156)
+[Какой тип документа выбирать для рассылок.](https://www.campaignmonitor.com/blog/post/4278/HTML5-vs-XHTML1-the-right-doctype-to-use-in-html-email)
+
+Рекомендуется использовать `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">`, чтобы использовать устаревшие, но полезные элементы и их атрибуты.
 
 [Общее о вёрстке рассылок](http://habrahabr.ru/post/157309/)
 
@@ -34,14 +36,12 @@
 
 Сделать отступ между несколькими элементами поможет такая конструкция:
 ```html
-<table cellspacing="0" cellpadding="0" border="0">
+<table width="650" cellspacing="0" cellpadding="0" border="0">
 	<tr>
-		<td style="padding-top: 20px;"></td>
+		<td valign="top" height="10px" style="padding-top: 0;"></td>
 	</tr>
 </table>
 ```
-
-
 
 Вообще, **любое выравнивание** лучше всего выполнять при помощи таблиц и их возможностей — `margin`, `padding`, `float` чаще всего будут вырезаны почтовыми клиентами.
 
@@ -52,30 +52,64 @@
 
 ## Оутлук
 
+[Про движок рендеринга в оутлуке 2010](http://stackoverflow.com/a/12019156)
+
+Если требуется что-то скрыть в оутлуке, можно применять специальное объявление `mso-hide:all;`.
+
 Слишком большие картинки следует **разделять на несколько небольших**, так как большие могут не загрузиться. Путём продолжительного тестирования было установлено, что относительно **безопасная высота** одиночного изображения для Оутлука 2010 (а именно в нём обнаружилась проблема с высотой) — `1600px`.
 
 Нежелательно задавать значение свойства `display` отличное от стандартного для элемента.
+[оутлуки, похоже, не поддерживают дисплей](http://msdn.microsoft.com/en-us/library/aa338201.aspx#Word2007MailHTMLandCSS_Core)
 
 Если с какой-либо из сторон таблицы появилась **однопиксельная полоса**, выходящяя за пределы её заданной ширины, проверьте, нет ли лишнего `colspan`.
+
+[Поддержка технологий почтовиками](http://www.campaignmonitor.com/css/)
+
+Порядок указания значений свойств в оутлуке: слева, сверху, справа, снизу.
+
+Атрибут `fillcolor` позволяет залить всю область `rect` цветом.
+
+Чтобы отобразить фоновое изображение, нужно использовать специальную разметку векторных изображений — [ВМЛ](http://msdn.microsoft.com/en-us/library/bb264048%28v=vs.85%29.aspx)
 
 [Фоновое изображение оутлука](http://stackoverflow.com/a/8914220)
 
 [Про фоновые изображения с примерами](http://www.emailonacid.com/blog/details/C13/emailology_vector_markup_language_and_backgrounds)
 
-[Поддержка технологий почтовиками](http://www.campaignmonitor.com/css/)
-
 [Фоновые изображения для оутлуков](http://www.campaignmonitor.com/blog/post/3363/updated-applying-a-background-image-to-html-email/)
 
-[Генератор вёрстки фоновых изображений](http://backgrounds.cm/)
+Нужно добавить следующее объявление:
+```html
+<html xmlns:v="urn:schemas-microsoft-com:vml">
+```
 
-[Про ВМЛ](http://msdn.microsoft.com/en-us/library/bb264048%28v=vs.85%29.aspx)
+Если нужно добавить фоновое изображение для страницы:
+```html
+<body style="margin:0; padding:0; width:100% !important;">
 
-[оутлуки, похоже, не поддерживают дисплей](http://msdn.microsoft.com/en-us/library/aa338201.aspx#Word2007MailHTMLandCSS_Core)
+<!--[if gte mso 9]>
+<v:background fill="t">
+   <v:fill type="tile" src="http://www.example.com/background_image.jpg" />
+</v:background>
+<![endif]-->
 
-Атрибут `fillcolor` позволяет залить всю область `rect` цветом.
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td align="center" background="http://www.example.com/background_image.jpg">
+    <table width="600" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td>
+             <p> If you can see this over the image, background images are successful. </p>
+           </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
 
-Порядок указания значений свойств в оутлуке: слева, сверху, справа, снизу.
+</body> 
+```
 
+Если нужно добавить фоновое изображение для ячейки:
 ```html
 ...
 <td background="http://www.example.ru/mail/bg.jpg" width="790" style="text-align: left;" valign="top">
@@ -99,3 +133,5 @@
 </td>
 ...
 ```
+
+[Генератор разметки фоновых изображений](http://backgrounds.cm/)
