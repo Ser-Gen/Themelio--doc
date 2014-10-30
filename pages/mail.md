@@ -135,3 +135,24 @@
 ```
 
 [Генератор разметки фоновых изображений](http://backgrounds.cm/)
+
+
+
+Дополнительные ссылки для изучения
+https://www.campaignmonitor.com/blog/tips-resources/P50
+https://www.campaignmonitor.com/blog/post/4321/order-stacked-columns-responsive-email
+https://www.campaignmonitor.com/blog/post/4099/introducing-our-new-standalone-css-inliner
+https://www.campaignmonitor.com/resources/will-it-work/guidelines/
+https://www.campaignmonitor.com/blog/post/4091/new-resources-button-background-generator-html-email-coding
+https://www.campaignmonitor.com/blog/post/4240/creating-a-centred-responsive-design-without-media-queries
+http://codepen.io/roshodgekiss/pen/KIlhg?editors=110
+https://github.com/brettdewoody/Responsive-Email-Boilerplate/blob/master/boilerplate.html
+https://www.campaignmonitor.com/blog/post/3564/applying-fluid-layouts-to-html-email-design/
+https://www.emailonacid.com/blog/details/C13/7_tips_and_tricks_regarding_margins_and_padding_in_html_emails
+
+https://github.com/dwightjack/grunt-nodemailer
+https://github.com/InterNations/antwort
+http://templates.mailchimp.com/development/css/outlook-conditional-css/
+http://newsignature.com/articles/responsive-email-templates-outlook-tips-pitfalls
+https://github.com/zurb/ink/blob/master/templates/examples/sidebar-hero.html
+http://zurb.com/article/1262/outlook-your-best-worst-enemy-for-respons
