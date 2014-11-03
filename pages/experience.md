@@ -2,6 +2,19 @@
 
 ## [Трело](http://blog.trello.com/refining-the-way-we-structure-our-css-at-trello/)
 
+[Здесь](http://blog.fogcreek.com/how-we-make-trello/) про процесс разработки, [тут](http://blog.trello.com/how-we-made-our-new-landing-pages-fast-a-grand-journey/) про то, как они делали оптимизированными рекламные страницы, [там](http://blog.fogcreek.com/we-spent-a-week-making-trello-boards-load-extremely-fast-heres-how-we-did-it/) про оптимизацию интерфейса.
+
+- `Less`;
+- [CSSShrink](http://cssshrink.com/)
+- без гранта или галпа;
+- стили разделены по файлам;
+- модульные стили, отказ от каскада;
+- классы с префиксом `js-` для добавления интерактивности;
+- правила написания стилей;
+- [пиктограммы выводятся шрифтом](http://blog.fogcreek.com/trello-uses-an-icon-font-and-so-can-you/);
+- [не стараются](http://blog.fogcreek.com/project-asteroid-gracefully-dropping-support-for-dinosaur-browsers-in-trello/) поддерживать старые браузеры;
+- не используют автопрефиксер, валидацию стилей, пиктограммы в свг (пусть и хотят), `normalize.css`.
+
 
 ## [Лонли плэнет](http://ianfeather.co.uk/css-at-lonely-planet/)
 
