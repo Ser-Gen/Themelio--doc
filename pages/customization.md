@@ -27,6 +27,11 @@ https://github.com/filamentgroup/jQuery-Custom-File-Input
 https://github.com/vxsx/jquery.iswitch.js
 
 
+## Текстовое поле
+
+http://javierjulio.github.io/textarea-autosize/
+
+
 ## Видео
 
 [Сравнение видеопроигрывателей](http://praegnanz.de/html5video/)
